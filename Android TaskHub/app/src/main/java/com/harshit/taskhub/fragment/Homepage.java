@@ -99,13 +99,13 @@ public class Homepage extends Fragment {
                         JSONObject task = response.getJSONObject(i);
                         Log.d("response",task.toString());
                         String status = task.getString("completed");
-                       // String title = task.getString("title");
+                        String title = task.getString("title");
                         String description = task.getString("description");
                         String created = task.getString("createdAt");
-                       // String updateed = task.getString("updatedAt");
-                       // String id = task.getString("_id");
+                        String updateed = task.getString("updatedAt");
+                        String id = task.getString("_id");
 
-                        taskLists.add(new TaskList(description,created,status));
+                        taskLists.add(new TaskList(title,created,status));
                         taskAdapter = new TaskAdapter(context,activity,taskLists);
 
                     } catch (JSONException e) {
